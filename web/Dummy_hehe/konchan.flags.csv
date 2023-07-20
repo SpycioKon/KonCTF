@@ -1,0 +1,7 @@
+_id,challenge,flag,price
+64b89013f6ce0bc2299b3de1,SQLI,Fake_flag,1
+64b8901df6ce0bc2299b3de2,XSS,Fake_flag,10
+64b89026f6ce0bc2299b3de3,XXE,Fake_flag,100
+64b89044f6ce0bc2299b3de4,DESIRIALIZE,KonCTF{this_is_my_supper_flag},100
+64b89cbd71c15fd126fd7190,123,hehe,
+64b89cc471c15fd126fd7191,,,
