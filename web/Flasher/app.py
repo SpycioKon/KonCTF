@@ -30,7 +30,7 @@ def readfile():
         if i in file:
             return "Mother fucker"
     fo = open(file,"rb")
-    return fo.read().decode("utf-8")
+    return base64.b64encode(fo.read()).decode("utf-8")
 @app.route("/login",methods=["GET"])
 @authenticated
 def login():
