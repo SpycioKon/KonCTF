@@ -14,6 +14,8 @@ def authenticated(func):
     def decorated_function(*args, **kwargs):
         if "role" not in session:
             return "Unauthorized", 401  # Return unauthorized status code
+        if session.get("role")!="admin":
+            return "You are not admin"
         return func(*args, **kwargs)
     return decorated_function
 @app.route("/",methods=["GET"])
