@@ -5,7 +5,7 @@ from config import secret
 import urllib,os,base64
 
 app = Flask(__name__)
-app.secret_key=secret.encode()
+app.secret_key=secret
 
 Flag = open("flag.txt","rb").read()
 blacklist = ["config.py","app.py","flag"]
