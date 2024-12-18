@@ -5,23 +5,18 @@ import pathlib
 import subprocess
 
 app = Flask(__name__)
-def check(url):
-    if re.match('\.\./',url):
-        return True
-    return False
 
 @app.route("/",methods=["GET"])
 def index():
     url = request.args.get('url')
     result = ""
     try:
-        if check(url):
+        if ".." in url or "%" in url or "flag" in url:
             result = "Cant exploit me!! "
         else:
             peak = os.getcwd().replace(" ","%20")
             cmd = f"curl file://{peak}/templates/{url}" #../flag.txt
-            ans = subprocess.check_output(["curl", f"file://{peak}/templates/{url}"], text=True)
-            result = ans
+            result = subprocess.check_output(["curl", f"file://{peak}/templates/{url}"], text=True)
     except:
         result = "Somthing error!!"
     return render_template("index.html",result=result)
