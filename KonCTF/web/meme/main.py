@@ -51,8 +51,8 @@ def logout():
     return redirect(url_for('login'))
 @app.route("/admin",methods=["GET","POST"])
 def admin():
-    # if "username" not in session:
-    #     return redirect(url_for("login"))
+    if "username" not in session:
+        return redirect(url_for("login"))
     if request.method == "POST":
         if "file" not in request.files:
             return redirect(url_for("admin"))
