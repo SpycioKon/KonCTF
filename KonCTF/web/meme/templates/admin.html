@@ -1,0 +1,12 @@
+
+<form action="" method="POST" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <button>Submit</button>
+</form>
+{% with messages = get_flashed_messages()%}
+{%if messages %}
+    {%for message in messages%}
+        <span>{{message}}</span>
+    {%endfor%}
+{%endif%}
+{%endwith%}

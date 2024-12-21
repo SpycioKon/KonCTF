@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Index{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>Page:{%block name%} Index {%endblock%}</h1>
+    </header>
+    <main>
+        {% block content %}
+            <div class="hello">
+                <h2>hello, wellcome to my suck</h2>
+                <a href="{{url_for('login')}}">Login</a>
+                <a href="{{url_for('register')}}">Register</a>
+                <a href="{{url_for('logout')}}">Logout</a>
+            </div>
+        {% endblock %}
+    </main>
+</body>
+</html>
