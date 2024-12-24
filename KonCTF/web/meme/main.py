@@ -58,7 +58,7 @@ def admin():
             return redirect(url_for("admin"))
         else:
             files = request.files['file']
-            files.save(os.path.join(UPLOAD_FOLDER,files.filename)) # yeah, my friend cant execute php code so he cant rce right?? 
+            files.save(os.path.join(UPLOAD_FOLDER,files.filename)) #yeah, my friend cant execute php code so he cant rce right?? 
             flash("da upload thanh cong")
     return render_template('admin.html')
 
@@ -79,4 +79,4 @@ def shell():
         return f"Command '{command}' is not allowed or contains invalid characters."
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1",port=1234,debug=True)
+    app.run(host="0.0.0.0",port=1234,debug=True)
